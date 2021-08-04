@@ -33,8 +33,9 @@
 <div class="form-group">
 				<label for="mod_telefono" class="col-sm-3 control-label">Rol</label>
 				<div class="col-sm-12">
-        <select class="form-control" id="mod_grupo" name="mod_grupo" required>
-                      <option value="0">--Seleccione un Rol--</option>
+
+        <select class="form-control" id="mod_rol" name="mod_rol" required>
+                      <option value="0">--Seleccione un rol--</option>
                       <?php
                     $gf=mysqli_query($con,"select * from rol");
                     while ($rw=mysqli_fetch_array($gf)){
@@ -45,8 +46,14 @@
                       <?php
                     }
                   ?>
-                    </select>
-				
+        </select>
+
+			<!-- 	<select class="form-control" name="mod_rol" id="mod_rol">
+                      <option value="Colaborador" selected>Colaborador</option>
+                      <option value="Supervisor">Supervisor</option>
+        </select> -->
+
+
 				</div>
 			  </div>
 			  <div class="input-group">
