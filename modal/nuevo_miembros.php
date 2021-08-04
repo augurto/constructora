@@ -34,12 +34,12 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">#</span>
                   </div>
-                  <input type="number" class="form-control" name="cedula" placeholder="DNI" required="">
+                  <input type="number" maxlength="8"  class="form-control" name="cedula" placeholder="DNI" required="">
                 </div> 
                   <label>Rol</label>
                 <div class="form-group">
 
-                <select class="form-control" id="grupo" name="rol" required>
+                <select class="form-control" id="rol" name="rol" required>
                       <option value="0">--Seleccione un rol--</option>
                       <?php
                     $programas=mysqli_query($con,"select * from rol");
