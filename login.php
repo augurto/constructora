@@ -51,7 +51,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail">Contraseña:</label>
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" name="password" placeholder="Password" required>
+                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" name="password" placeholder="Contraseña" required>
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
