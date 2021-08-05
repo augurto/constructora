@@ -26,14 +26,15 @@ function generate_string($input, $strength = 16) {
 }
  
 $rand=generate_string($permitted_chars, 7);
-		$sql2 = "SELECT * FROM miembros WHERE cedula = '" . $cedula . "' OR email = '" . $email . "';";
+$pas_sha1=sha1($rand);
+		$sql2 = "SELECT * FROM usuarios WHERE dni = '" . $cedula . "' OR email = '" . $email . "';";
                 $query_check_user_name = mysqli_query($con,$sql2);
 				$query_check_user=mysqli_num_rows($query_check_user_name);
 
                 if ($query_check_user == 1) {
                     $errors[] = "Lo sentimos , el dni o el email ya está en uso.";
                 } else {
-		$sql="INSERT INTO miembros (nombre, cedula, email, rol, grupo, rand, estado) VALUES ('$nombre', '$cedula','$email','$rol', '$grupo','$rand', '$estado')";
+		$sql="INSERT INTO usuarios (dni, username, password, email, rol, grupo) VALUES ('$cedula','$nombre','$pas_sha1' ,'$email','$rol','$grupo')";
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){
 				$messages[] = "Ingresado satisfactoriamente.";
